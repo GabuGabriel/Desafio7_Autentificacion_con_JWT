@@ -5,6 +5,7 @@ exports.getUsers = async (req, res) => {
     const result = await pool.query('SELECT * FROM usuarios');
     res.status(200).json(result.rows);
   } catch (error) {
+    console.error('Error en getUsers:', error);
     res.status(500).send('Error al obtener usuarios');
   }
 };
@@ -15,6 +16,7 @@ exports.getUser = async (req, res) => {
     const result = await pool.query('SELECT * FROM usuarios WHERE email = $1', [email]);
     res.status(200).json(result.rows[0]);
   } catch (error) {
+    console.error('Error en getUser:', error);
     res.status(500).send('Error al obtener usuario');
   }
 };

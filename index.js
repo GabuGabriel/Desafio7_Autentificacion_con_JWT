@@ -1,9 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const authRoutes = require('./src/routes/authRoutes');
-const userRoutes = require('./src/routes/userRoutes');
-const logger = require('./src/middlewares/logger');
-const errorHandler = require('./src/middlewares/errorHandler');
+const authRoutes = require('./src/routes/authRoutes.js');
+const userRoutes = require('./src/routes/userRoutes.js');
+const logger = require('./src/middlewares/logger.js');
+const errorHandler = require('./src/middlewares/errorHandler.js');
 
 const app = express();
 app.use(cors());
